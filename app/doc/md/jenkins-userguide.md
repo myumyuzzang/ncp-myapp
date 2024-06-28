@@ -92,13 +92,15 @@ USER jenkins
 
 ```
 # docker build -t suhodo/my-jenkins:1.0 .
-```
+# docker build -t minjinzz/my-jenkins:1.0 .
+``` 
 
 도커 이미지를 도커 허브 사이트에 업로드 하기
 
 ```
 # docker login
 # docker push suhodo/my-jenkins:1.0
+# docker push minjinzz/my-jenkins:1.0
 ```
 
 컨테이너 생성 및 실행하기
@@ -169,6 +171,14 @@ root 사용자로 젠킨스 컨테이너에 접속하기
         - JAVA_HOME: `/usr/lib/jvm/java-17-openjdk-amd64`
     - SAVE 클릭
 
+    - Jenkins 관리
+  - Global Tool Configuration
+    - JDK
+      - 'Add JDK' 클릭
+        - Name: `openjdk-17`
+        - JAVA_HOME: `/opt/java/openjdk`
+    - SAVE 클릭
+
 ### github.com의 프로젝트 연동
 
 Dashboard
@@ -181,10 +191,10 @@ Dashboard
   - General
     - 설명: `빌드 테스트1`
     - `GitHub project` 체크
-      - Project url: `https://github.com/eomjinyoung/bitcamp-myapp.git`
+      - Project url: `https://github.com/NCP08/ncp-myapp.git`
   - 소스 코드 관리
     - `Git` 선택
-      - Repository URL: `https://github.com/eomjinyoung/bitcamp-myapp.git`
+      - Repository URL: `https://github.com/NCP08/ncp-myapp.git`
       - Credentials:
         - Add 버튼 클릭: `Add Jenkins` 선택
         - `Username with Password` 선택
